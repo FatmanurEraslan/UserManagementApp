@@ -5,7 +5,7 @@ COPY requirement.txt /app
 ENV IN_DOCKER_CONTAINER Yes
 COPY run.py /app
 COPY . /app/
-RUN pip install -r requirement.txt
+RUN pip3 install -r requirement.txt
 ENTRYPOINT ["python"]
 CMD ["run.py"]
-EXPOSE 9000
+EXPOSE 5000

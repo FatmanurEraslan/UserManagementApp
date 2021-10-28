@@ -3,6 +3,16 @@ from flask import render_template, flash, request, redirect
 from .forms import UserForm
 from application import db
 from  bson import ObjectId
+from pymongo import MongoClient
+
+def get_db():
+    client = MongoClient(host='test_mongodb',
+                         port=5000, 
+                         username='root', 
+                         password='pass',
+                        authSource="admin")
+    db = client["userManagementDb"]
+    return db
 
 @app.route("/")
 def get_users():
