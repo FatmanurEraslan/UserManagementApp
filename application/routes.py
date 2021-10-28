@@ -7,7 +7,7 @@ from pymongo import MongoClient
 
 def get_db():
     client = MongoClient(host='test_mongodb',
-                         port=5000, 
+                         port=27017, 
                          username='root', 
                          password='pass',
                         authSource="admin")
@@ -17,6 +17,7 @@ def get_db():
 @app.route("/")
 def get_users():
     users = []
+   ## db=get_users()
     for user in db.user_flask.find():
          user["_id"] = str(user["_id"])
          users.append(user)
