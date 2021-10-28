@@ -1,0 +1,4 @@
+{
+    "python.formatting.provider": "black",
+    "liveServer.settings.multiRootWorkspaceName": "UserManagementApp 2"
+}

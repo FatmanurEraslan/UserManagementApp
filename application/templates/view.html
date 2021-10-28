@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Department</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+
+          <tr>
+            <th scope="row"></th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.department}}</td>
+            <td>      
+            <a href="{{url_for('update_user', id = user._id) }}"><span class="fa fa-edit" style="font-size:24px;"></span>&nbsp; &nbsp; </a>
+            <a href="{{url_for('delete_user', id = user._id) }}"><span class="fa fa-trash" style="font-size:24px;color:red"></span> </a>
+            </td>
+          </tr>
+                    {% endfor %}
+                </table>
+            </div>
+                  
+
+{% endblock %}
